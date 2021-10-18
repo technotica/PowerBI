@@ -1,0 +1,23 @@
+# Jamf Measures for PowerBI - OS Version
+# Use these Measures to obtain count information for Mac OS version
+# Examples: 10.14.6 or 10.15.7
+
+# In these examples, the calculated column 'computerDetails.os_build_name' is available to query.
+
+macOS 10.10 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("Yosemite",Computers[computerDetails.os_build_name],1,0)))
+
+macOS 10.11 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("El Capitan",Computers[computerDetails.os_build_name],1,0)))
+
+macOS 10.12 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("Sierra",Computers[computerDetails.os_build_name],1,0))) - [macOS 10.13]
+
+macOS 10.13 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("High Sierra",Computers[computerDetails.os_build_name],1,0)))
+
+macOS 10.14 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("Mojave",Computers[computerDetails.os_build_name],1,0)))
+
+macOS 10.15 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("Catalina",Computers[computerDetails.os_build_name],1,0)))
+
+macOS 11 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("Big Sur",Computers[computerDetails.os_build_name],1,0)))
+
+macOS 12 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("Monterey",Computers[computerDetails.os_build_name],1,0)))
+
+macOS OLD = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.os_build_name])),FILTER(ALL(Computers[computerDetails.os_build_name]),SEARCH("Old",Computers[computerDetails.os_build_name],1,0)))
