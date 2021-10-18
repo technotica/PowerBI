@@ -1,6 +1,8 @@
-# Jamf Measures for PowerBI - Mac Release Year
+###### Jamf Measures for PowerBI - Mac Release Year
 # Use these Measures to obtain count information for Mac original release year 
 # Examples: MacBook Pro (15-inch, 2018) or MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports) or iMac Intel (Retina 5K, 27-Inch, 2019)
+
+###========================================###
 
 Mac 2021 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("2021",Computers[computerDetails.model],1,0)))
 

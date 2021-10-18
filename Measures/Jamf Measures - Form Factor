@@ -1,27 +1,23 @@
-# Jamf Measures for PowerBI - Form Factor
-# Use these Measures to obtain count information for Mac form factor (e.g. iMac or 13" MacBook Pro)
+###### Jamf Measures for PowerBI - Form Factor
+# Use these Measures to obtain count information for Mac form factor (e.g. iMac or 13" MacBook Pro) 
 
-, hardware architecture (arm64 or Intel), hardware release year, and macOS Version. 
+###====================Mac Form Factors - Desktop and Laptop====================###
 
-# Apple Silicon
-Apple Silicon = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.processor_architecture])),FILTER(ALL(Computers[computerDetails.processor_architecture]),SEARCH("arm64",Computers[computerDetails.processor_architecture],1,0)))
-
-# Mac Form Factors - Desktop and Laptop
 Mac Desktop = [iMac All] + [iMac Pro] + [Mini] + [Mac Pro]
 
 Mac Laptop = [MacBook Air] + [MacBook Pro]
 
 MacBook All = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook",Computers[computerDetails.model],1,0)))
 
-# Mac Form Factors - Major
-
+###===================Mac Form Factors - Major=====================###
+ 
 iMac All = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("iMac",Computers[computerDetails.model],1,0)))
 
 MacBook Air = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Air",Computers[computerDetails.model],1,0)))
 
 MacBook Pro = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Pro",Computers[computerDetails.model],1,0)))
 
-# Mac Form Factors - Detailed
+###==================# Mac Form Factors - Detailed=====================###
 
 iMac 21 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("iMac Intel (21.5",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("iMac Intel (Retina 4K, 21.5",Computers[computerDetails.model],1,0)))
 

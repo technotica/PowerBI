@@ -1,0 +1,5 @@
+###### Jamf Measures for PowerBI - Apple Silicon
+# Use these Measures to obtain count information for ARM64 (M1) Macs
+
+# Apple Silicon
+Apple Silicon = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.processor_architecture])),FILTER(ALL(Computers[computerDetails.processor_architecture]),SEARCH("arm64",Computers[computerDetails.processor_architecture],1,0)))

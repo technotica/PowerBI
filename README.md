@@ -7,7 +7,7 @@
 # Extra Slides
 These slides includes extra information that didn't make the cut for the JNUC 2021 time limit. 
 
-This includes a big section on how to transform the Extension Attributes table which makes it so much easier to use Extension Attributes in visualizations and measures.
+This includes a large section on how to transform the Extension Attributes query. Using those steps make it much easier to use Extension Attributes in visualizations and measures.
 
 Depending on the feeback from JNUC 2021, some of this material may be folded into future presentation.
 
