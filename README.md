@@ -2,7 +2,7 @@
  
  This is the repo for the JNUC 2021 talk regarding building and customizing beautiful dashboards with PowerBI. It includes code examples and extra slides. 
 
- [![Watch the video](https://www.youtube.com/watch?v=ZfuVAqUmIEw/default.jpg)](https://www.youtube.com/watch?v=ZfuVAqUmIEw)Video is now available:
+ [![Watch the video](https://img.youtube.com/vi/ZfuVAqUmIEw/0.jpg)](https://www.youtube.com/watch?v=ZfuVAqUmIEw)Video is now available:
 
  Power BI Desktop app is free to use and is Windows only :(  If you want to publish or share your dashboard you may need additional licensing. See the links below for more details.
 
