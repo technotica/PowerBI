@@ -1,6 +1,6 @@
 # Query Editor Calculated Column for macOS Release Name
 
-# Use this formula to make a calculated column in Query Editor from Jamf Computers Query in Power BI that provicdes the macOS Release Name
+# Use this formula to make a calculated column in Query Editor from Jamf Computers Query in Power BI that provides the macOS Release Name
 
-if ( Text.Start([computerDetails.os_build],2) = "21") then "Monterey" else if ( Text.Start([computerDetails.os_build],2) = "20") then "Big Sur" else if (Text.Start([computerDetails.os_build],2) = "19") then "Catalina"   else if (Text.Start([computerDetails.os_build],2) = "18") then "Mojave" else if (Text.Start([computerDetails.os_build],2) = "17") then "High Sierra"  else if (Text.Start([computerDetails.os_build],2) = "16") then "Sierra"  else if (Text.Start([computerDetails.os_build],2) = "15") then "El Capitan" else if (Text.Start([computerDetails.os_build],2) = "14") then "Yosemite"
+if (Text.Start([computerDetails.os_build],2) = "22") then "Ventura" else if ( Text.Start([computerDetails.os_build],2) = "21") then "Monterey" else if ( Text.Start([computerDetails.os_build],2) = "20") then "Big Sur" else if (Text.Start([computerDetails.os_build],2) = "19") then "Catalina"   else if (Text.Start([computerDetails.os_build],2) = "18") then "Mojave" else if (Text.Start([computerDetails.os_build],2) = "17") then "High Sierra"  else if (Text.Start([computerDetails.os_build],2) = "16") then "Sierra"  else if (Text.Start([computerDetails.os_build],2) = "15") then "El Capitan" else if (Text.Start([computerDetails.os_build],2) = "14") then "Yosemite"
   else "Old"
