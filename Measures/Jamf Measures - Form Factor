@@ -3,7 +3,7 @@
 
 ###====================Mac Form Factors - Desktop and Laptop====================###
 
-Mac Desktop = [iMac All] + [iMac Pro] + [Mini] + [Mac Pro]
+Mac Desktop = [iMac All] + [iMac Pro] + [Mini] + [Mac Pro] + [Mac Studio]
 
 Mac Laptop = [MacBook Air] + [MacBook Pro]
 
@@ -29,6 +29,8 @@ iMac Pro = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FI
 
 Mac Pro = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacPro",Computers[computerDetails.model],1,0)))
 
+Mac Studio = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("Mac Studio",Computers[computerDetails.model],1,0)))
+
 Mini = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("mini",Computers[computerDetails.model],1,0)))
 
 MacBook 12 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook (12",Computers[computerDetails.model],1,0)))
@@ -38,6 +40,8 @@ MacBook Air 11 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model
 MacBook Air 13 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("13-inch MacBook Air",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Air (13",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Air (Retina",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Air (M1",Computers[computerDetails.model],1,0)))
 
 MacBook Pro 13 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("13-inch MacBook Pro",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Pro (13-inch",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("13-inch Retina MacBook Pro",Computers[computerDetails.model],1,0)))
+
+MacBook Pro 14 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Pro (14",Computers[computerDetails.model],1,0)))
 
 MacBook Pro 15 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("15-inch MacBook Pro",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("MacBook Pro (15",Computers[computerDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("15-inch Retina MacBook Pro",Computers[computerDetails.model],1,0)))
 
