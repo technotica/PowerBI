@@ -1,0 +1,73 @@
+###### Jamf Measures for PowerBI - iPad Release Year
+# Use these Measures to obtain count information for iPad original release year going back to 2017
+# Apple and Jamf don't provide a model year in their model descriptions which is why this took more work ¯\_(ツ)_/¯
+# Extrapolated from https://en.wikipedia.org/wiki/IPad and inspecting iPads in Jamf Pro
+
+# This may be way more information than you're seeking for your environment, in that case you can combine some of the calculations into a single meassure
+
+###========================================###
+
+## 2022 iPads
+2022 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 10th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2022 iPad Air = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Air 5th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2022 iPad Pro 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-inch) (4th",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-inch Wi-Fi/Cellular) (4th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2022 iPad Pro 12.9-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9-inch) (6th",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9-inch Wi-Fi/Cellular) (6th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2022 iPads = [2022 iPad] + [2022 iPad Air] + [2022 iPad Pro 11-inch] + [2022 iPad Pro 12.9-inch]
+
+## 2021 iPads
+2021 iPad mini = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad mini 6th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2021 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 9th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2021 iPad Pro 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-inch) (3rd",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2021 iPad Pro 12.9-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9-inch) (5th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2021 iPads = [2021 iPad] + [2021 iPad mini] + [2021 iPad Pro 11-inch] + [2021 iPad Pro 12.9-inch]
+
+## 2020 iPads
+2020 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 8th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2020 iPad Air = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Air 4th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2020 iPad Pro 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-inch Wi-Fi) (2nd",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-inch Cellular) (2nd",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2020 iPad Pro 12.9-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9-inch Wi-Fi) (4th",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9-inch Cellular) (4th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2020 iPads = [2020 iPad] + [2020 iPad Air] + [2020 iPad Pro 11-inch] + [2020 iPad Pro 12.9-inch]
+
+## 2019 iPads
+2019 iPad mini = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad mini 5th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2019 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 7th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2019 iPad Air = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Air 3rd",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2019 iPads = [2019 iPad] + [2019 iPad Air] + [2019 iPad mini] 
+
+## 2018 iPads
+2018 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 6th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+# 2018 was the introduction of the 11-inch iPad Pro, note you'll need to have measures for 2020, 2021, and 2022 for this to work
+2018 iPad Pro 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-inch",'Mobile Devices'[mobileDeviceDetails.model],1,0))) -  [2022 iPad Pro 11-inch] - [2021 iPad Pro 11-inch] - [2020 iPad Pro 11-inch] 
+
+2018 iPad Pro 12.9-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9-inch Wi-Fi) (3rd",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9-inch Cellular) (3rd",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2018 iPads = [2018 iPad] + [2019 iPad Air] + [2018 iPad Pro 11-inch] + [2018 iPad Pro 12.9-inch]
+
+#2017 iPads
+2017 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 5th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+#2017 was the only year for the 10.5" iPad Pro
+2017 iPad Pro 10.5-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 2nd Generation (10.5-inch",'Mobile Devices'[mobileDeviceDetails.model],1,0))) 
+
+2017 iPad Pro 12.9-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 2nd Generation (12.9-inch",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2017 iPads = [2017 iPad] + [2017 iPad Pro 10.5-inch] + [2017 iPad Pro 12.9-inch]
+
+# Really old iPads
+2016 or older iPads = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad",'Mobile Devices'[mobileDeviceDetails.model],1,0))) - [2017 iPads] - [2018 iPads] - [2019 iPads] - [2020 iPads] - [2021 iPads] - [2022 iPads]
