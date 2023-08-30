@@ -1,0 +1,20 @@
+###### Jamf Measures for PowerBI - iOS Version
+# Use these Measures to obtain count information for OS version for both iOS and iPadOS
+# Examples: 10.14.6 or 10.15.7
+
+
+###========================================###
+
+iOS 17 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("17.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
+
+iOS 16 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("16.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
+
+iOS 15 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("15.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
+
+iOS 14 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("14.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
+
+iOS 13 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("13.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
+
+iOS 12 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("12.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
+
+iOS Old = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version]))) - [iOS 17] - [iOS 16] - [iOS 15] - [iOS 14] - [iOS 13] - [iOS 12]
