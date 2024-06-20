@@ -8,6 +8,22 @@
 
  The focus of the JNUC talk was focused around Macs, but many of the same principles can be applied for Mobile Devices like iOS and AppleTV devices.
 
+# Important Notes for Jamf Pro 11.5 and later
+Jamf has disabled basic authentication for all Jamf Pro instances automatically upon upgrade starting with Jamf Pro 11.5
+
+[Jamf Pro 11.5 Important Notices](https://learn.jamf.com/en-US/bundle/jamf-pro-release-notes-11.5.0/page/Important_Notices.html)
+
+You will need to enable Basic Authentication in Jamf Pro in order to use the PowerBI Jamf connector, both in the PowerBI app as well as if you use the data refresh feature in PowerBI. 
+
+If Basic Auth is not enabled in Jamf, PowerBI will report "The credentials provided for the JamfPro source are invalid".
+
+To re-enable basic authentication in Jamf Pro:
+1. Go to Settings -> Users accounts and groups
+2. Click Password Policy (in upper right)
+3. Check the box 'Allow Basic authentication in addition to Bearer Token authentication'
+
+Please consider voting up this feature idea for Microsoft to support API tokens. https://ideas.fabric.microsoft.com/ideas/idea/?ideaid=1d1acbef-5e21-ef11-8ee8-000d3a7c8d70
+
 # Extra Slides
 These slides includes extra information that didn't make the cut for the JNUC 2021 time limit. 
 
@@ -30,7 +46,6 @@ Depending on the feeback from JNUC 2021, some of this material may be folded int
 # Power BI Tools
 - [Power BI Measures for Jamf](https://www.slingpine.com/page/5/)
 - [Creating Measure Tables in Power BI](https://www.biinsight.com/define-measure-table-power-bi-desktop/)
-
 
 # Visualization Examples
 Here's a few example visualizations I made with for our Jamf environment.  
