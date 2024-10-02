@@ -25,6 +25,8 @@ iPad Pro 9.7-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDevic
 
 iPad Pro 10.5-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 2nd Generation (10.5-inch",'Mobile Devices'[mobileDeviceDetails.model],1,0))) 
 
-iPad Pro 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+iPad Pro 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (11-",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 11-",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
 
 iPad Pro 12.9-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 2nd Generation (12.9",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro (12.9",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+iPad Pro 13-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 2nd Generation (12.9",'Mobile Devices'[mobileDeviceDetails.model],1,0))) + CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 13-",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
