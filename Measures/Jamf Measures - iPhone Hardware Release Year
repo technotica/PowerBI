@@ -1,0 +1,115 @@
+###### Jamf Measures for PowerBI - iPad Release Year
+# Use these Measures to obtain count information for iPhone release year going back to 2017
+# Apple and Jamf don't provide a model year in their model descriptions which is why this took more work ¯\_(ツ)_/¯
+# Extrapolated from https://en.wikipedia.org/wiki/iPhone and inspecting iPads in Jamf Pro
+
+# This may be way more information than you're seeking for your environment, in that case you can combine some of the calculations into a single meassure
+
+###========================================###
+
+# 2024 iPhones
+
+iPhone 16 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone17,3",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 16 Plus = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone17,4",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 16 Pro = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone17,1",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 16 Pro Max = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone17,2",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2024 iPhones = [2024 iPhone] + [2024 iPhone Plus] + [2024 iPhone Pro] + [2024 iPhone Pro Max]
+
+# 2023 iPhones
+
+iPhone 15 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone15,4",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 15 Plus = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone15,5",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 15 Pro = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone16,1",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 15 Pro Max = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone16,2",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2023 iPhones = [2023 iPhone] + [2023 iPhone Plus] + [2023 iPhone Pro] + [2023 iPhone Pro Max]
+
+# 2022 iPhones
+
+iPhone SE 3rd Gen = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone14,6",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 14 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone14,7",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 14 Plus = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone14,8",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 14 Pro = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone15,2",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 14 Pro Max = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone15,3",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2022 iPhones = [2022 iPhone] + [2022 iPhone Plus] + [2022 iPhone Pro] + [2022 iPhone Pro Max] + [2022 iPhone SE]
+
+# 2021 iPhones
+
+iPhone 13 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone14,5",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 13 Mini = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone14,4",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 13 Pro = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone14,2",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 13 Pro Max = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone14,3",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2021 iPhones = [iPhone 13] + [iPhone 13 Mini] + [iPhone 13 Pro] + [iPhone 14 Pro Max]
+
+# 2020 iPhones
+
+iPhone SE 2nd Gen = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone12,8",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 12 Mini = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone13,1",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 12 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone13,2",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 12 Pro = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone13,3",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 12 Pro Max = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone13,4",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2020 iPhones = [iPhone 12] + [iPhone 12 Mini] + [iPhone 12 Pro] + [iPhone 12 Pro Max] + [iPhone SE 2nd Gen]
+
+# 2019 iPhones
+
+iphone 11 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone12,1",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 11 Pro = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone12,3",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 11 Pro Max = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone12,5",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2019 iPhones = [iPhone 11] + [iPhone 11 Pro] + [iPhone 11 Pro Max]
+
+# 2018 iPhones
+
+iPhone XS = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone11,2",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone XS Max = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone11,4",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone XS Max Global = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone11,6",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone XR = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone11,8",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2018 iPhones = [iPhones XS] + [iPhones XS Max] + [iPhone XS Max Global] + [iPhone XR]
+
+# 2017 iPhones
+
+iPhone 8 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone10,1",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 8 Plus = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone10,2",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone X Global = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone10,3",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 8.1 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone10,4",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone 8 Plus.1 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone10,5",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+iPhone X GSM = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone10,6",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
+2017 iPhones = [iPhone 8] + [iPhone 8 Plus] + [iPhone X Global] + [iPhone 8.1] + [iPhone 8 Plus.1] + [iPhone X GSM]
+
+
+## Really old iPhones
+
+2016 or older iPhones = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0))) - [2017 iPhones] - [2018 iPhones] - [2019 iPhones] - [2020 iPhones] - [2021 iPhones] - [2022 iPhones] - [2023 iPhones] - [2024 iPhones]
