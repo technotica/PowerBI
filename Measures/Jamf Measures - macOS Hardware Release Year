@@ -4,6 +4,8 @@
 
 ###========================================###
 
+Mac 2025 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("2025",Computers[computerDetails.model],1,0)))
+
 Mac 2024 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("2024",Computers[computerDetails.model],1,0)))
 
 Mac 2023 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("2023",Computers[computerDetails.model],1,0)))
