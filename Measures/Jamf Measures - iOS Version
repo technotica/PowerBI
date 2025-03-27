@@ -5,6 +5,8 @@
 
 ###========================================###
 
+iOS 18 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("18.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
+
 iOS 17 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("17.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
 
 iOS 16 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("16.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
@@ -17,4 +19,4 @@ iOS 13 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os
 
 iOS 12 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version])),FILTER(ALL('Mobile Devices'[MobileDeviceDetails.os_version]),SEARCH("12.",'Mobile Devices'[mobileDeviceDetails.os_version],1,0)))
 
-iOS Old = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version]))) - [iOS 17] - [iOS 16] - [iOS 15] - [iOS 14] - [iOS 13] - [iOS 12]
+iOS Old = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[MobileDeviceDetails.os_version]))) - [iOS 18] - [iOS 17] - [iOS 16] - [iOS 15] - [iOS 14] - [iOS 13] - [iOS 12]
