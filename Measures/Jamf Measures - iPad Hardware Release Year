@@ -7,6 +7,13 @@
 
 ###========================================###
 
+## 2025 iPads
+2025 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 11th",'Mobile Devices'[mobileDeviceDetails.model],1,0
+
+2025 iPad Air 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Air 11-inch (M3",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2025 iPads = [2025 iPad] + [2025 iPad Air 11-inch]
+
 ## 2024 iPads
 2024 iPad Air 11-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Air 11-inch (M2",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
 
@@ -18,7 +25,9 @@
 
 2024 iPad Pro 13-inch = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad Pro 13-inch (M4",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
 
-2024 iPads = [2024 iPad Air] + [2024 iPad Pro 11-inch] + [2024 iPad Pro 13-inch]
+2024 iPad mini = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad mini 7th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
+
+2024 iPads = [2024 iPad Air] + [2024 iPad Pro 11-inch] + [2024 iPad Pro 13-inch] + [2024 iPad mini]
 
 ## 2022 iPads
 2022 iPad = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model]),SEARCH("iPad 10th",'Mobile Devices'[mobileDeviceDetails.model],1,0)))
