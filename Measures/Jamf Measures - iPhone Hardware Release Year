@@ -7,6 +7,9 @@
 
 ###========================================###
 
+# 2025 iPhones
+iPhone 16e = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone17,5",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
+
 # 2024 iPhones
 
 iPhone 16 = CALCULATETABLE(ROW("rows",COUNT('Mobile Devices'[mobileDeviceDetails.model_identifier])),FILTER(ALL('Mobile Devices'[mobileDeviceDetails.model_identifier]),SEARCH("iPhone17,3",'Mobile Devices'[mobileDeviceDetails.model_identifier],1,0)))
