@@ -30,4 +30,4 @@ Mac 2014 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FI
 
 Mac 2013 = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model])),FILTER(ALL(Computers[computerDetails.model]),SEARCH("2013",Computers[computerDetails.model],1,0)))
 
-Mac 2012 and Older = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model]))) - [Mac 2013] - [Mac 2014] - [Mac 2015] - [Mac 2016] - [Mac 2017] - [Mac 2018] - [Mac 2019] - [Mac 2020] - [Mac 2021] - [Mac 2022] - [Mac 2023]
+Mac 2012 and Older = CALCULATETABLE(ROW("rows",COUNT(Computers[computerDetails.model]))) - [Mac 2013] - [Mac 2014] - [Mac 2015] - [Mac 2016] - [Mac 2017] - [Mac 2018] - [Mac 2019] - [Mac 2020] - [Mac 2021] - [Mac 2022] - [Mac 2023] - [Mac 2024] - [Mac 2025]
